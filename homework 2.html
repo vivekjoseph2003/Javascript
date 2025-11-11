@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Contact Manager App</title>
+</head>
+<body>
+<h1>CONTACT APP</h1>
+<script>
+    let contact1={
+        name:'Bruno',
+        phone:9999999990,
+        email:'bruno@gmail.com',
+        getInfo:function()
+        {
+            return " NAME: " +this.name+" ;PHONE NO: "+this.phone+" ;EMAIL: "+this.email;
+        }
+    };
+
+    let contact2={
+        name:'Shaw',
+        phone:9999988890,
+        email:'shaw@gmail.com',
+        getInfo:function()
+        {
+            return " NAME: " +this.name+" ;PHONE NO: "+this.phone+" ;EMAIL: "+this.email;
+        }
+    };
+
+    function printContactInfo(contact)
+    {
+        console.log(contact.getInfo());
+        document.write("<p>"+contact.getInfo()+"</p>");
+    }
+    printContactInfo(contact1);
+    printContactInfo(contact2);
+</script>
+</body>
+</html>
