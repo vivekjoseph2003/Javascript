@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+</head>
+<body>
+<h1>FEEDBACK STRING</h1>
+<script>
+    var feedback = "   I loved the FOOD and the service!   ";
+    var tr=feedback.trim();
+    document.write("<p>"+tr+"</p>");
+    var lo=tr.toLowerCase();
+    document.write("<p>"+lo+"</p>");
+    var re=lo.replace("food","ambience");
+    document.write("<p>"+re+"</p>");
+    var ind=re.indexOf("service");
+    document.write("<p>"+ind+"</p>");
+    var ar=re.split(" ");
+    document.write("<p>"+ar+"</p>");
+</script>
+</body>
+</html>
