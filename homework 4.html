@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Game Result Generator</title>
+</head>
+<body>
+<script>
+var mysterylevel=Math.floor(Math.random()*50)+1;
+var scorestr="45";
+var userscore=Number(scorestr);
+var absolutedifference=Math.abs(mysterylevel-userscore);
+var roundsq=Math.round(Math.sqrt(userscore));
+var pivalue=Math.PI;
+var conversion="20"*5;
+var highvalue=Math.max(10,20,mysterylevel);
+var lowvalue=Math.min(10,20,mysterylevel);
+console.log("Random Number between 1 and 50:",mysterylevel);
+console.log("User Score:",userscore);
+console.log("Absolute Difference:",absolutedifference);
+console.log("Rounded Square Root:",roundsq);
+console.log("Pi Value:",pivalue);
+console.log("Implicit Conversion of string 20 multiplied by 5:",conversion);
+console.log("Highest Value:",highvalue);
+console.log("Lowest Value:",lowvalue);
+</script>
+</body>
+</html>
