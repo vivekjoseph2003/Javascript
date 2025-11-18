@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Dashboard</title>
+</head>
+<body>
+<script>
+let students = [
+    { name: "Harry", score: 85 },
+    { name: "Bruno", score: 40 },
+    { name: "Shaw", score: 92 },
+    { name: "Diogo", score: 30 },
+];
+console.log("All Student Names:");
+function namelist(student)
+{
+    console.log(student.name);
+}
+students.forEach(namelist);
+function abovesixty(student)
+{
+    return student.score > 60;
+}
+
+function getName(student)
+{
+    return student.name;
+}
+var avgstudents = students.filter(abovesixty).map(getName);
+console.log("Students scoring more than 60:", avgstudents);
+function sumScores(total,student)
+{
+    return total + student.score;
+}
+var totalScore = students.reduce(sumScores, 0);
+console.log("Total Score:", totalScore);
+function passed(student)
+{
+    return student.score > 35;
+}
+var allpass= students.every(passed);
+console.log("All students passed?", allpass);
+function aboveninety(student)
+{
+    return student.score > 90;
+}
+var ninetyplus = students.some(aboveninety);
+console.log("Someone scored above 90?",ninetyplus);
+function compareScores(a, b)
+{
+    return b.score - a.score;
+}
+var sortedStudents = students.slice().sort(compareScores);
+function showStudent(student)
+{
+    console.log(student.name + " - " + student.score);
+}
+console.log("Students sorted by score:");
+sortedStudents.forEach(showStudent);
+</script>
+</body>
+</html>
