@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Web Based Remainder Tool</title>
+</head>
+<body>
+ <h2>Reminder Tool</h2>
+ <label for="eventDate">Enter a past date:</label>
+<input type="date" id="eventDate" onchange="showEventDetails()">
+<p id="details"></p>
+<p id="message"></p>
+<script>
+var monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+function showEventDetails()
+{
+    var input = document.getElementById("eventDate").value;
+    if (!input) return;
+    var eventDate = new Date(input);
+    var today = new Date();
+    var day = eventDate.getDate();
+    var month = monthNames[eventDate.getMonth()];
+    var year = eventDate.getFullYear();
+    var yearsPassed = today.getFullYear() - year;
+    if (today.getMonth() < eventDate.getMonth() || (today.getMonth() === eventDate.getMonth() && today.getDate() < eventDate.getDate()))
+    {
+        yearsPassed--;
+    }
+    document.getElementById("details").innerHTML = "You selected: " + day + " " + month + ", " + year + "<br>Full years passed: " + yearsPassed;
+    document.getElementById("message").innerHTML = (yearsPassed >= 1)?"It has been more than a year since that date.":"It has been less than a year since that date.";
+}
+</script>
+</body>
+</html>
