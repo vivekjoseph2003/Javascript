@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Product Listing</title>
+</head>
+<body>
+<script>
+let fruits= ["Apple", "Banana", "Orange"];
+let prices= [50, 30, 60];
+let merged= [];
+for (let i= 0; i < fruits.length; i++)
+{
+    merged.push(`Product: ${fruits[i]} - Price: ${prices[i]}`);
+}
+console.log("Merged Product List:");
+for (let item of merged) 
+{
+    console.log(item);
+}
+console.log("\nProducts with price > 50:");
+for (let i= 0; i < fruits.length; i++) 
+{
+    if (prices[i] > 50) 
+    {
+        console.log(`Product: ${fruits[i]} - Price: ${prices[i]}`);
+    }
+}
+fruits.push("Watermelon");
+prices.push(80);
+merged= [];
+for (let i = 0; i < fruits.length; i++) 
+{
+    merged.push(`Product: ${fruits[i]} - Price: ${prices[i]}`);
+}
+console.log("\nUpdated Product List After Adding Watermelon:");
+for (let item of merged) 
+{
+    console.log(item);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script> 
+</body>
+</html>
