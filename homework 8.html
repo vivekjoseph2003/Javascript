@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Input System</title>
+</head>
+<body>
+<script>
+let chance=1;
+while(chance<=5)
+{
+    let number=parseInt(prompt("number between 1 and 5:"));
+    if(number<1 || number>5 || isNaN(number))
+    {
+        console.log("Invalid input");
+        continue;
+    }
+    switch(number)
+    {
+        case 1:
+            console.log("One");
+            break;
+        case 2:
+            console.log("Two");
+            break;
+        case 3:
+            console.log("Three");
+            break;
+        case 4:
+            console.log("Four");
+            break;
+        case 5:
+            console.log("Five");
+            break;
+    }
+    if(number==3)
+    {
+        console.log("You guessed it right!");
+        break;
+    }
+    else
+    {
+        console.log("Wrong guess. Try again.");
+    }
+
+    chance++;
+}
+if(chance>5)
+{
+    console.log("Game over");
+}
+</script>
+</body>
+</html>
