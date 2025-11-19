@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+<script>
+for (let i = 1; i <= 5; i++)
+{
+    let code=parseInt(prompt("Enter product code:"));
+    let qty=parseInt(prompt("Enter quantity:"));
+    if (code<1 || code>3)
+    {
+    console.log("Invalid");
+    continue;
+    }
+    let price=0;
+    switch (code)
+    {
+        case 1:
+            price=30;
+            console.log("Item:Apple");
+            break;
+        case 2:
+            price=10;
+            console.log("Item:Banana");
+            break;
+        case 3:
+            price=50;
+            console.log("Item:Mango");
+            break;
+    }
+    let total = price*qty;
+    console.log("Total=Rs:" +total);
+    if (total>100)
+    {
+        console.log("High purchase");
+    }
+    else
+    {
+        console.log("Normal purchase");
+    }
+}
+</script>
+</body>
+</html>
