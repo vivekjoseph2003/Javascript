@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Comment Filtering System</title>
+</head>
+<body>
+<p id="demo">I think this movie was BAD and 100% Stupid! But the Acting was Amazing and 3 actors were great.</p>
+<p id="result"></p>
+<button onclick="check()">Click Here</button>
+<script>
+function check()
+{
+    var str=document.getElementById("demo").innerHTML;
+    var ban=/\b(bad|ugly|stupid)\b/gi;
+    var rep=str.replace(ban,"***");
+    var matches=str.match(/\d+/g);
+    var count=matches?matches.length:0;
+    var capital=str.match(/\b[A-Z][a-zA-Z]*/g);
+    var capcount= capital?capital.length:0;
+    document.getElementById("demo").innerHTML=rep;
+    document.getElementById("result").innerHTML="Numbers Found: "+count+"<br>"+"Capitalized Words: "+capcount;
+}
+</script>
+</body>
+</html>
