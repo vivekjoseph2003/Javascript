@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic User Comment System</title>
+</head>
+<body>
+<p id="demo">My son is 12 years old. Our flat number is 45 and contact is 9876543210.</p>
+<p id="result"></p>
+<button onclick="check()">Click Here</button>
+<script>
+function check()
+{
+  var str=document.getElementById("demo").innerHTML;
+  var containdig=/\d/.test(str);
+  var txt=str.replace(/\d+/gi,"NUMBER");
+  document.getElementById("demo").innerHTML=txt;
+  document.getElementById("result").innerHTML="Number found: "+containdig;
+}
+</script>
+</body>
+</html>
