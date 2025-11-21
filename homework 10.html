@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Contact Form</title>
+</head>
+<body>
+<script>
+let text=`{
+  "name":"Harry Maguire",
+  "email":"harry@gmail.com",
+  "feedback":"Thank you"
+}`;
+try
+{
+    let convert=JSON.parse(text);
+    let output=()=>{
+        let casing=convert.feedback.toLowerCase();
+        if(casing.includes("thank"))
+        {
+            console.log("Positive feedback received");
+        }
+        else
+        {
+            console.log("Feedback noted");
+        }
+    };
+    output();
+}
+catch(err)
+{
+    console.log("Error:", err.message);
+}
+</script>   
+</body>
+</html>
