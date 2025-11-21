@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+<script>
+let text=`{
+  "Name":"Harry Maguire",
+  "Email":"harry@gmail.com",
+  "Message":"Harry Maguire's Jersey Number is 5."
+}`;
+try
+{
+  let convert=JSON.parse(text);
+  let output=()=>{
+    console.log("Message received from ",convert.Name);
+};
+  output();
+}
+catch(err)
+{
+  console.log("Error",err.message);
+}
+</script>   
+</body>
+</html>
