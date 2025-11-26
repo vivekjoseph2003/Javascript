@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Feedback webpage</title>
+    <style>
+    #confirmation
+    {
+        color: green;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    #feedbackDisplay
+    {
+        margin-top: 20px;
+        color: black;
+    }
+    </style>
+</head>
+<body>
+<h2>Feedback Form</h2>
+<form id="feedbackForm">
+<label for="name">Name:</label><br>
+<input type="text"id="name"placeholder="Enter your name"required><br><br>
+<label for="feedback">Feedback:</label><br>
+<textarea id="feedback" rows="4" cols="50" placeholder="Enter your feedback" required></textarea><br><br>
+<button type="submit">Submit</button>
+</form>
+<p id="confirmation"></p>
+<div id="feedbackDisplay"></div>
+<script>
+
+document.getElementById("feedbackForm").addEventListener("submit",function(event)
+{
+    event.preventDefault();
+    let name=document.getElementById("name").value.trim();
+    let feedback=document.getElementById("feedback").value.trim();
+    let display=document.getElementById("feedbackDisplay");
+    display.innerHTML=`<strong>${name}:</strong> ${feedback}`;
+    let confirmation=document.getElementById("confirmation");
+    confirmation.textContent="Thanks for your feedback!";
+    setTimeout(function(){
+        confirmation.textContent="";
+    },5000);
+    document.getElementById("feedbackForm").reset();
+}
+);
+let feedbackDiv=document.getElementById("feedbackDisplay");
+feedbackDiv.addEventListener("mouseover",function()
+{
+    this.style.color="blue";
+}
+);
+feedbackDiv.addEventListener("mouseout",function()
+{
+    this.style.color="black";
+}
+);
+</script> 
+</body>
+</html>
