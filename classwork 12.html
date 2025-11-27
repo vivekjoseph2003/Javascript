@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple web page textbox</title>
+</head>
+<body>
+<h2>Example</h2>
+<form id="myForm">
+    <input type="text" id="userText" placeholder="Enter text here">
+    <button type="submit">Submit</button>
+</form>
+<p id="output"style="color:blue;">Text will be shown here</p>
+<script>
+document.getElementById("myForm").addEventListener("submit",function(event)
+{
+    event.preventDefault();
+    let text=document.getElementById("userText").value;
+    let para=document.getElementById("output");
+    para.innerHTML=text;
+    para.style.color="blue";
+}
+);
+document.getElementById("output").addEventListener("mouseover",function()
+{
+    this.style.color = "green";
+}
+);
+document.getElementById("output").addEventListener("mouseout",function()
+{
+    this.style.color = "blue";
+}
+);
+</script> 
+</body>
+</html>
